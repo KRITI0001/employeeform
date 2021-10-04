@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+
+    
+    <style>
+      body{
+        background-image: url("https://visme.co/blog/wp-content/uploads/simple-backgrounds-wide-header.jpg");
+      }
+        input[type=text], select,textarea {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        input[type=date]{
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        input[type=tel] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 20%;
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        input[type=cancel] {
+          width: 20%;
+          background-color: red;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        div {
+          border-radius: 5px;
+        
+          padding: 10px;
+        }
+
+        span{
+          font-weight: bold;
+          font-size: large;
+        }
+        </style>
+</head>
+<body>
+ <u> <h3 style="font-weight: bold;">Employee Form</h3></u>
+
+    <div>
+    
+      <form name="myform"action="#" onsubmit="return validation()" class="bg-light">
+    
+        <div class="form-group">
+        <label for="name"> Name</label>
+        
+        <input type="text" id="name" name="firstname" placeholder="Your name..">
+    <span id="username"class="text-danger font-weight:bold">
+</span>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your email id">
+        
+      </div>
+
+        <div class="form-group">
+         <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="Date of Birth">
+    
+    </div>
+
+    <div class="form-group">
+    <label for="phone">Enter your phone number:</label>
+    <input type="text" id="phone" name="phone"placeholder="Mobile Number">
+        
+           
+    </div>
+
+    <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="selectoption">-select option-</option>
+          <option value="canada">canada</option>
+          <option value="afghanistan">Afghanistan</option>
+          <option value="india">India</option>
+        </select>
+       
+    </div>
+
+    <div class="form-group">
+        <label for="city">City</label>
+        <select id="city" name="city">
+          <option value="selectoption">-select option-</option>
+          <option value="kabul">KABUL</option>
+          <option value="dhaka">DHAKA</option>
+          <option value="lucknow">Lucknow</option>
+        </select>
+        
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <select id="state" name="state">
+        <option value="selectoption">-select option-</option>
+        <option value="australia">Afghanistan</option>
+        <option value="canada">Canada</option>
+        <option value="india">India</option>
+      </select>
+      
+  </div>
+
+    
+
+        <div class="form-group">
+        <label for="address">Address</label>
+        
+        <textarea id="address" name="address"placeholder="Your Address"></textarea>
+       
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Submit">
+        
+        
+        <input type="cancel" value="Cancel">
+        </div>
+      </form>
+    </div>  
+
+    <script type="text/javascript">
+      function validation() {
+       var name = document.forms["myform"]["name"].value;
+       if(name==""){
+       alert("Please enter the name");
+       return false;
+       }
+       var email = document.forms["myform"]["email"].value;
+       if(email==""){
+       alert("Please enter the email");
+       return false;
+       }else{
+       var re = /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+       var x=re.test(email);
+       if(x){
+       }else{
+       alert("Email id not in correct format");
+       return false;
+       } 
+       } 
+       var mobile = document.forms["myform"]["phone"].value;
+       if(phone==""){
+       alert("Please enter the mobile");
+       return false;
+       }
+       
+       var country= 
+                    document.forms["myform"]["country"];
+       if (country.selectedIndex < 1) {
+                    alert("Please enter your country.");
+                    country.focus();
+                    return false;
+                }
+                var city= 
+                    document.forms["myform"]["city"];
+       if (city.selectedIndex < 1) {
+                    alert("Please enter your city.");
+                    city.focus();
+                    return false;
+                }
+                var country= 
+                    document.forms["myform"]["state"];
+       if (state.selectedIndex < 1) {
+                    alert("Please enter your state");
+                    state.focus();
+                    return false;
+                }
+                var address = document.forms["myform"]["address"].value;
+       if(address==""){
+       alert("Please enter the address");
+       return false;
+       }
+       
+  
+                return true;
+      }
+
+
+      </script>
+
+
+</body>
+
+    
+    
+   
+
+</html>
